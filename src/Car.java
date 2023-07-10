@@ -1,14 +1,5 @@
-public class Car extends Vehicle {
+public class Car extends MotorTransport {
     public Car(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
-    }
-
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
-    public void check() {
-        this.checkWheels();
-        this.checkEngine();
     }
 }

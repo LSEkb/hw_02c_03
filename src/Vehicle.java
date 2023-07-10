@@ -1,4 +1,4 @@
-public abstract class Vehicle implements ServiceStation {
+public abstract class Vehicle implements Maintenance{
     private String modelName;
     private int wheelsCount;
 
@@ -15,22 +15,20 @@ public abstract class Vehicle implements ServiceStation {
         return wheelsCount;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public void setWheelsCount(int wheelsCount) {
-        this.wheelsCount = wheelsCount;
-    }
-
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
 
-    public void checkWheels() {
+    public void service() {
         System.out.println("Обслуживаем " + this.getModelName());
         for (int i = 0; i < this.getWheelsCount(); i++) {
             this.updateTyre();
         }
+    }
+    @Override
+    public void check(){
+        System.out.println();
+        service();
+        System.out.println();
     }
 }
