@@ -1,3 +1,3 @@
 public interface Maintenance {
-    void check();
+    void check(Vehicle vehicle);
 }

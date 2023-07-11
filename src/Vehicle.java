@@ -1,4 +1,4 @@
-public abstract class Vehicle implements Maintenance{
+public abstract class Vehicle {
     private String modelName;
     private int wheelsCount;
 
@@ -20,15 +20,11 @@ public abstract class Vehicle implements Maintenance{
     }
 
     public void service() {
-        System.out.println("Обслуживаем " + this.getModelName());
-        for (int i = 0; i < this.getWheelsCount(); i++) {
-            this.updateTyre();
+        if (this != null) {
+            System.out.println("Обслуживаем " + this.getModelName());
+            for (int i = 0; i < this.getWheelsCount(); i++) {
+                this.updateTyre();
+            }
         }
-    }
-    @Override
-    public void check(){
-        System.out.println();
-        service();
-        System.out.println();
     }
 }
